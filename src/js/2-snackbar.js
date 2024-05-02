@@ -8,11 +8,13 @@ document.querySelector('.form').addEventListener('submit', function (event) {
   const state = this.elements['state'].value;
 
   const promise = new Promise((resolve, reject) => {
-    if (state === 'fulfilled') {
-      setTimeout(() => resolve(delay), delay);
-    } else if (state === 'rejected') {
-      setTimeout(() => reject(delay), delay);
-    }
+    setTimeout(() => {
+      if (state === 'fulfilled') {
+        resolve(delay);
+      } else if (state === 'rejected') {
+        reject(delay);
+      }
+    }, delay);
   });
 
   promise.then(
