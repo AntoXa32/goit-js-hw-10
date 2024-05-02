@@ -23,6 +23,7 @@ function convertMs(ms) {
 
 document.addEventListener('DOMContentLoaded', function () {
   const startButton = document.querySelector('[data-start]');
+  startButton.disabled = true;
   const dateTimePicker = flatpickr('#datetime-picker', {
     enableTime: true,
     time_24hr: true,
@@ -77,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
       timer.querySelector('[data-seconds]').textContent =
         addLeadingZero(seconds);
 
-      if (duration <= 0) {
+      if (duration <= 1000) {
         clearInterval(timerInterval);
         startButton.disabled = false;
         startButton.classList.remove('active');

@@ -6,7 +6,10 @@ input {
   border: 1px solid #808080;
 }
 
-
+input:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
 
 input::placeholder {
   font-family: var(--font-family);
@@ -18,7 +21,7 @@ input::placeholder {
 }
 
 button {
-  background: #cfcfcf;
+  background: #6276c9;
   border-radius: 8px;
   padding: 8px 16px;
   width: 75px;
@@ -29,31 +32,13 @@ button {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: #989898;
+  color: #fff;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #4b6dff;
-  color: #fff;
-}
-
 button:disabled {
-  background-color: #cccccc;
+  background-color: #ccc;
   cursor: not-allowed;
-}
-
-button.active {
-  background-color: #007bff;
-  color: #fff;
-}
-
-button.active:hover {
-  background-color: #0056b3;
-}
-
-button.active:hover:not(:disabled) {
-  background-color: #0056b3;
 }
 
 .timer {
